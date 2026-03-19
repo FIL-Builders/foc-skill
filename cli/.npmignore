@@ -1,0 +1,13 @@
+# Source
+src/
+tsconfig.json
+biome.json
+
+# Build artifacts
+dist/src/**/*.js.map
+dist/src/**/*.d.ts.map
+dist/tsconfig.tsbuildinfo
+
+# Dev
+node_modules/
+.env*

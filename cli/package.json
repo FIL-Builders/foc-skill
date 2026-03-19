@@ -1,0 +1,63 @@
+{
+  "name": "foc-skill",
+  "version": "0.0.1",
+  "description": "CLI for Filecoin Onchain Cloud — decentralized storage on Filecoin with PDP verification and USDFC payments.",
+  "type": "module",
+  "main": "dist/src/index.js",
+  "bin": {
+    "foc-skill": "dist/src/index.js"
+  },
+  "files": [
+    "dist/src/**/*.js",
+    "dist/src/**/*.d.ts",
+    "README.md",
+    "LICENSE",
+    "skills/"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "prepublishOnly": "rm -rf dist && tsc && cp ../README.md ../LICENSE . && cp -r ../skills .",
+    "postpublish": "rm -f README.md LICENSE && rm -rf skills",
+    "lint": "tsc --noEmit && biome check --fix src/"
+  },
+  "keywords": [
+    "filecoin",
+    "foc",
+    "filecoin-cloud",
+    "warm-storage",
+    "pdp",
+    "usdfc",
+    "synapse",
+    "decentralized-storage",
+    "web3",
+    "mcp"
+  ],
+  "author": "Filb <nijoe1@fil.builders>",
+  "license": "Apache-2.0 OR MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FIL-Builders/foc-skill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FIL-Builders/foc-skill/issues"
+  },
+  "homepage": "https://github.com/FIL-Builders/foc-skill#readme",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@clack/prompts": "^1.0.0",
+    "@filoz/synapse-core": "^0.3.1",
+    "@filoz/synapse-sdk": "^0.40.0",
+    "@remix-run/fs": "^0.4.1",
+    "conf": "^15.0.2",
+    "incur": "^0.3.1",
+    "terminal-link": "^5.0.0",
+    "viem": "^2.47.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.6",
+    "@types/node": "^25.4.0",
+    "typescript": "^5.9.3"
+  }
+}
